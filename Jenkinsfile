@@ -13,8 +13,26 @@ pipeline{
                 bat """cd C:\\Users\\aykabz\\Desktop\\test\\tests
                 robot  -d C:\\Users\\aykabz\\Desktop\\test\\tests\\output .
                 """.stripIndent().trim()
-                
             }
+            post {
+        	always {
+		        script {
+		          step(
+			            [
+			              $class              : 'RobotPublisher',
+			              outputPath          : 'reports',
+			              outputFileName      : '**/output.xml',
+			              reportFileName      : '**/report.html',
+			              logFileName         : '**/log.html',
+			              disableArchiveOutput: false,
+			              passThreshold       : 50,
+			              unstableThreshold   : 40,
+			              otherFiles          : "**/*.png,**/*.jpg",
+			            ]
+		          	)
+		        }
+	  		}		
+	    }
         }
     }
 }
