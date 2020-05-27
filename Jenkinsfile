@@ -10,7 +10,9 @@ pipeline{
         }
         stage("test2"){
             steps{
-                echo "test2"
+                bat 'cd C:\Users\aykabz\Desktop\test\tests'
+                bat 'robot  -d C:\Users\aykabz\Desktop\test\tests\output .'
+                
             }
         }
     }
