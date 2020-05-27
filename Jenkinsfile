@@ -20,7 +20,7 @@ pipeline{
 		          step(
 			            [
 			              $class              : 'RobotPublisher',
-			              outputPath          : 'reports',
+			              outputPath          : 'C:\\Users\\aykabz\\Desktop\\test\\tests\\output',
 			              outputFileName      : '**/output.xml',
 			              reportFileName      : '**/report.html',
 			              logFileName         : '**/log.html',
