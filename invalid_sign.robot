@@ -10,7 +10,6 @@ Test Template     Sign Should Fail
 Pass1 != Pass2                 ${PASSWORD}      whatever
 Empty Pass1                    ${EMPTY}         ${PASSWORD} 
 Empty Pass2                    ${PASSWORD}      ${EMPTY}
-Empty Pass1 and Pass2          ${EMPTY}         ${EMPTY}
 
 
 
